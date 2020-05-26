@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XKCategorySwift_Example' do
+  pod 'XKCategorySwift', :path => '../'
+
+  target 'XKCategorySwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
