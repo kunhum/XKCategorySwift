@@ -1,0 +1,6 @@
+framework module Pods_XKCategorySwift_Example {
+  umbrella header "Pods-XKCategorySwift_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

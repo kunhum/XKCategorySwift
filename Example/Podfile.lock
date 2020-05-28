@@ -1,0 +1,16 @@
+PODS:
+  - XKCategorySwift (1.0.0)
+
+DEPENDENCIES:
+  - XKCategorySwift (from `../`)
+
+EXTERNAL SOURCES:
+  XKCategorySwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XKCategorySwift: cd099eb6c0e6e7f5352ecb1dad606bb733c829eb
+
+PODFILE CHECKSUM: 8deecdb3e67dcaa0107944b5790439c775cb0c8e
+
+COCOAPODS: 1.9.1
