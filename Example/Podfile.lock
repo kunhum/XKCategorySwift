@@ -1,5 +1,5 @@
 PODS:
-  - XKCategorySwift (1.0.0)
+  - XKCategorySwift (1.0.1)
 
 DEPENDENCIES:
   - XKCategorySwift (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  XKCategorySwift: cd099eb6c0e6e7f5352ecb1dad606bb733c829eb
+  XKCategorySwift: f51b1ee9e109773d346b281289f7776215e19ae9
 
 PODFILE CHECKSUM: 8deecdb3e67dcaa0107944b5790439c775cb0c8e
 

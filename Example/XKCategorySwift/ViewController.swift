@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        /*
         let text = "123456"
         print(text.xk_subTo(index: 1))
         print(text.xk_subFrom(index: 1))
@@ -89,6 +90,13 @@ class ViewController: UIViewController {
         print("440111000824987".xk_verifyIDCard())
         print("-------------------")
         print("621233 7011119374611".xk_isValidBankCard())
+ */
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.date(from: "2020-05-28 22:00:00")!
+        print(date.xk_isThisYear())
+        
+        print(date.xk_isYesterday())
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

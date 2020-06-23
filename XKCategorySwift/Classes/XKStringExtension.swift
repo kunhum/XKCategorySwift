@@ -380,7 +380,10 @@ extension String {
 
 //MARK: - 验证
 extension String {
-    
+    //MARK: 是否电话（包含座机和手机）
+    public func xk_isPhone() -> Bool {
+        return xk_isMobileNumber() || xk_isTelphoneNumber()
+    }
     /*
      手机号码
      移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188,1705
@@ -420,6 +423,16 @@ extension String {
         let mobile = "^(1)\\d{10}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", mobile)
         return predicate.evaluate(with: self)
+    }
+    //MARK: 验证是否座机
+    public func xk_isTelphoneNumber() -> Bool {
+        let stringNumber  = "^(0\\d{2,3}-?\\d{7,8}$)"
+        let predicate     = NSPredicate(format: "SELF MATCHES %@", stringNumber)
+        let isPhone       = predicate.evaluate(with: self)
+        let stringNumber1 = "^(\\d{7,8}$)"
+        let predicate1    = NSPredicate(format: "SELF MATCHES %@", stringNumber1)
+        let isPhone1      = predicate1.evaluate(with: self)
+        return isPhone || isPhone1
     }
     //MARK: 是否邮箱
     public func xk_isEmailAddress() -> Bool {
