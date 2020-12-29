@@ -97,11 +97,15 @@ extension String {
     }
     //MARK: 格式化价格
     /// 格式化价格，当以x.00结尾时，显示x。以x.x0结尾时，显示x.x
-    /// - Parameter price: 价格
+    /// - Parameters:
+    ///   - price: 价格
+    ///   - mode: 模式 默认为plain： plain, 四舍五入，down, 只舍不入， up, 只入不舍， bankers 四舍六入, 中间值时, 取最近的,保持保留最后一位为偶数
     /// - Returns: 格式化后的价格
-    public static func xk_formatterPrice(price: Double) -> String {
-        var priceText = String(format: "%.2f", price)
-        print("初始：\(priceText)")
+    public static func xk_formatterPrice(price: Double, mode: NSDecimalNumber.RoundingMode = .plain) -> String {
+        var number    = NSDecimalNumber(floatLiteral: price)
+        let handler   = NSDecimalNumberHandler(roundingMode: mode, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+        number        = number.rounding(accordingToBehavior: handler)
+        var priceText = number.stringValue
         if priceText.hasSuffix(".00") {
             priceText = priceText.replacingOccurrences(of: ".00", with: "")
         }
