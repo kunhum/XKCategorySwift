@@ -109,7 +109,7 @@ extension String {
         if priceText.hasSuffix(".00") {
             priceText = priceText.replacingOccurrences(of: ".00", with: "")
         }
-        else if priceText.hasSuffix("0") {
+        else if priceText.hasSuffix(".0") {
             priceText = priceText.xk_subTo(index: priceText.count-2)
         }
         
